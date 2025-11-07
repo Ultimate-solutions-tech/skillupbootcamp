@@ -41,83 +41,103 @@
 
         /* Navigation */
         /* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 10px 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 10px;
-}
-
-.logo img {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
-
-/* CTA Button */
-    .nav-cta {
-        background: var(--primary, #007bff);
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: background 0.3s ease, transform 0.2s ease;
-        white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-        background: var(--primary-dark, #0056b3);
-        transform: translateY(-2px);
-    }
-
-    /* ✅ Responsive fix for small screens */
-    @media (max-width: 768px) {
         .nav-container {
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 10px;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            gap: 10px;
         }
 
         .logo img {
-            height: 45px; /* smaller logo for mobile */
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
-        .nav-cta {
-            font-size: 14px;
-            padding: 8px 16px;
-        }
-    }
+        /* CTA Button */
+            .nav-cta {
+                background: var(--primary, #007bff);
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: background 0.3s ease, transform 0.2s ease;
+                white-space: nowrap;
+            }
 
-    /* ✅ Extra small screens (like 400px) */
-    @media (max-width: 480px) {
-        .nav-container {
-            gap: 6px;
+            .nav-cta:hover {
+                background: var(--primary-dark, #0056b3);
+                transform: translateY(-2px);
+            }
+
+            /* ✅ Responsive fix for small screens */
+            @media (max-width: 768px) {
+            nav {
+                position: static; /* Not fixed on mobile */
+                box-shadow: none;
+                backdrop-filter: none;
+                padding: 15px 0;
+            }
+
+            .nav-container {
+                display: flex;
+                justify-content: space-between; /* Logo left, CTA right */
+                align-items: center;
+                gap: 0;
+                padding: 0 15px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .nav-cta {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
         }
 
-        .logo img {
-            height: 30px;
-        }
+        /* Extra small screens (phones) */
+        @media (max-width: 480px) {
+            nav {
+                position: static; /* Not fixed on mobile */
+                box-shadow: none;
+                backdrop-filter: none;
+                padding: 15px 0;
+                height: 20px;
+            }
+            .logo img {
+                height: 40px;
+            }
 
-        .nav-cta {
-            font-size: 13px;
-            padding: 6px 14px;
+            .nav-container {
+                display: flex;
+                justify-content: space-between; /* Logo left, CTA right */
+                align-items: center;
+                gap: 0;
+                padding: 0 15px;
+            }
+            
+            .nav-cta {
+                font-size: 13px;
+                padding: 6px 14px;
+            }
         }
-    }
 
 
         /* Hero Section */
