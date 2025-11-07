@@ -59,8 +59,8 @@
         }
 
         .logo img {
-            height: 60px;              /* Adjust logo height */
-            width: auto;               /* Maintain aspect ratio */
+            height: 55px;
+            width: auto;
             object-fit: contain;
             display: block;
         }
@@ -83,14 +83,13 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('./images/IMG-20251031-WA0005.jpg');
-            background-size: cover;
-            background-position: center;
+                        url('./images/IMG-20251031-WA0005.jpg') center/cover no-repeat;
             color: var(--white);
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
-            height: 700px;
+            height: auto;
+            min-height: 700px;
         }
 
         .hero::before {
@@ -116,18 +115,18 @@
             align-items: center;
             position: relative;
             z-index: 1;
-            margin-top: 30px;
+            margin-top: 50px;
         }
 
         .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
         .hero-text p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
             opacity: 0.9;
         }
@@ -136,14 +135,13 @@
             display: inline-block;
             background: var(--white);
             color: var(--primary-blue);
-            padding: 18px 36px;
+            padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            transform: translateY(0);
         }
 
         .cta-button:hover {
@@ -202,6 +200,93 @@
         .keyword { color: #0066cc; }
         .string { color: #22863a; }
         .comment { color: #6a737d; font-style: italic; }
+
+        /* ===================================== */
+        /* 📱 MOBILE RESPONSIVENESS */
+        /* ===================================== */
+
+        @media (max-width: 992px) {
+            nav {
+                padding: 8px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+                margin-top: 70px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1.05rem;
+            }
+
+            .hero-visual {
+                order: -1; /* show image/code window above text */
+                justify-content: center;
+            }
+
+            .code-window {
+                max-width: 320px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 45px;
+            }
+
+            .nav-cta {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+                min-height: 600px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 500px;
+                padding: 80px 0 50px;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+                padding: 14px;
+                font-size: 0.9rem;
+            }
+
+            .code-window {
+                padding: 16px;
+                font-size: 13px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+        }
 
         /* Features Section */
         .features {
